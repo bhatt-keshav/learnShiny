@@ -1,4 +1,6 @@
-# UI 
+# Notes
+A shiny object has two components. UI and Server. All shiny apps must be called app.R
+## UI 
 * Shiny uses the function fluidPage to create a display that automatically adjusts to the dimensions of your user’s browser window. You lay out the user interface of your app by placing elements in the fluidPage function.
 
 	* titlePanel and sidebarLayout are the two most popular elements to add to fluidPage
