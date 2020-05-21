@@ -36,5 +36,13 @@ A shiny object has two components. UI and Server. All shiny apps must be called 
 * Also there is the _input_ object, this object saves the current values of all of the widgets in your app
 * Shiny will automatically make an object reactive if the object uses an input value
 * When a user changes a widget, Shiny will rebuild all of the outputs that depend on the widget, using the new value of the widget 
-* 
+### Use R scripts and data
+* Shiny cannot look in other file paths, it will treat all file paths as if they begin in the same directory as the app.R (server.R) file
+* The server function is run once each time a user visits the app\
+	* and the R expressions inside render functions are run whenever a user change the value of a widget
+* To make the app not too heavy
+	* Define user specific objects inside server function, but outside of any render calls	
+	* Since Shiny will rerun all of the code in a render chunk each time a user changes a widget, you should generally avoid placing code inside a render function that does not need to be there. Doing so will slow down the entire app
+	* The other parts like _library_ or _readRDS_ are read only once
+	
 
